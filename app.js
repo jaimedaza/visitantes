@@ -4,8 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017/visitantes', {
-	useNewUrlParser: true,
-	useUnifiedTopology: true
+	useNewUrlParser: true,	
 });
 
 const visitorSchema = new mongoose.Schema({
@@ -40,5 +39,3 @@ app.get('/', (req, res) => {
 });
 
 app.listen(3000, () => console.log('Listening on port 3000!'));
-
-
