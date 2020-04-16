@@ -7,6 +7,8 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost:27017/visitante
 	useNewUrlParser: true,	
 });
 
+mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
+
 const visitorSchema = new mongoose.Schema({
 
   date: { type: Date, default: Date.now },
